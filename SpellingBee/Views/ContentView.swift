@@ -67,7 +67,7 @@ struct ContentView: View {
             TextField("Type Answer Here", text: $inputGiven)
                 .padding()
             
-            ZStack{
+            ZStack(alignment: .leading){
                 Button(action: {
                     // Answer has been checked
                     answerChecked = true
@@ -83,48 +83,53 @@ struct ContentView: View {
                 }, label: {
                     Text("Check answer")
                     
-                }
-                )
+                })
+                    .padding()
+                    .buttonStyle(.bordered)
                 
+            }
+            ZStack{
                 HStack {
-                    ZStack {
-                        Image(systemName: "checkmark.circle")
-                            .foregroundColor(.green)
-                        //        CONDITION      true  false
-                            .opacity(answerCorrect == true ? 1.0 : 0.0)
-                        
-                        Image(systemName: "x.square")
-                            .foregroundColor(.red)
-                        //        CONDITION1         AND     CONDITION2         true  false
-                        //       answerChecked = true     answerCorrect = false
-                            .opacity(answerChecked == true && answerCorrect == false ? 1.0 : 0.0)
-                    }
-                }
                     
+                    Image(systemName: "checkmark.circle")
+                        .foregroundColor(.green)
+                    //        CONDITION      true  false
+                        .opacity(answerCorrect == true ? 1.0 : 0.0)
                     
-                    //                Button(action:{
-                    //                    // resetting all the orginal properties
-                    //                    currentItem = itemsToSpell.randomElement()!
-                    //                    answerChecked = false
-                    //                    answerCorrect = false
-                    //                    inputGiven = ""
-                    //
-                    //                }, label: {
-                    //                    Text("New Question")
-                    //                })
+                    Image(systemName: "x.square")
+                        .foregroundColor(.red)
+                    //        CONDITION1         AND     CONDITION2         true  false
+                    //       answerChecked = true     answerCorrect = false
+                        .opacity(answerChecked == true && answerCorrect == false ? 1.0 : 0.0)
+                    
                 }
-                // Next button for the checking of the question
             }
             
+                            Button(action:{
+                                // resetting all the orginal properties
+                                currentItem = itemsToSpell.randomElement()!
+                                answerChecked = false
+                                answerCorrect = false
+                                inputGiven = ""
+            
+                            }, label: {
+                                Text("New Question")
+                            })
+                .padding()
+                .buttonStyle(.bordered)
         }
+         // Next button for the checking of the question
     }
+    
+}
 
-    
-    
-    
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
+
+
+
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
+}
