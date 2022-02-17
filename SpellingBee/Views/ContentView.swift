@@ -18,15 +18,13 @@ struct ContentView: View {
     @State var answerChecked = false
     @State var answerCorrect = false
     //
-    //    var correctSpelling: ""{
-    //        return inputGiven == answerCorrect
-    //    }
+      
     
     // MARK: Computed properties
     var body: some View {
         
         
-        
+        // creation of the displaying code for the randomly selected image and image name (tied together)
         VStack {
             
             Image(currentItem.imageName)
@@ -63,32 +61,47 @@ struct ContentView: View {
         }
         
         VStack{
+            
             // Creating the inputGiven
             // Using $ to tie it to the origanal inputGiven Value
             TextField("Type Answer Here", text: $inputGiven)
                 .padding()
             
             ZStack{
-                Button(action:{
-                    // resetting all the orginal properties
-                    currentItem = itemsToSpell.randomElement()!
-                    answerChecked = false
-                    answerCorrect = false
-                    inputGiven = ""
+                Button(action: {
+                    // Answer has been checked
+                    answerChecked = true
+                
+                    // If the answer is correct = true
+                    // If the answer is false = false
+                    if inputGiven == currentItem.word{
+                        answerCorrect = true
+                    } else {
+                        answerCorrect = false
+                    }
                     
                 }, label: {
-                    Text("New Question")
-                })
+                    Text("Check answer")
+                
+                }
+               )
+                
+                
+                
+                
+//                Button(action:{
+//                    // resetting all the orginal properties
+//                    currentItem = itemsToSpell.randomElement()!
+//                    answerChecked = false
+//                    answerCorrect = false
+//                    inputGiven = ""
+//                    
+//                }, label: {
+//                    Text("New Question")
+//                })
             }
             // Next button for the checking of the question
-            Button(action: {
-                
-                
-            }, label: {
-            
-            
-            }
-           )}
+           }
             
         }
     }
