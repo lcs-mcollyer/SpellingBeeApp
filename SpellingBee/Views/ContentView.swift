@@ -18,7 +18,7 @@ struct ContentView: View {
     @State var answerChecked = false
     @State var answerCorrect = false
     //
-      
+    
     
     // MARK: Computed properties
     var body: some View {
@@ -71,7 +71,7 @@ struct ContentView: View {
                 Button(action: {
                     // Answer has been checked
                     answerChecked = true
-                
+                    
                     // If the answer is correct = true
                     // If the answer is false = false
                     if inputGiven == currentItem.word{
@@ -82,36 +82,49 @@ struct ContentView: View {
                     
                 }, label: {
                     Text("Check answer")
-                
+                    
                 }
-               )
+                )
                 
-                
-                
-                
-//                Button(action:{
-//                    // resetting all the orginal properties
-//                    currentItem = itemsToSpell.randomElement()!
-//                    answerChecked = false
-//                    answerCorrect = false
-//                    inputGiven = ""
-//                    
-//                }, label: {
-//                    Text("New Question")
-//                })
+                HStack {
+                    ZStack {
+                        Image(systemName: "checkmark.circle")
+                            .foregroundColor(.green)
+                        //        CONDITION      true  false
+                            .opacity(answerCorrect == true ? 1.0 : 0.0)
+                        
+                        Image(systemName: "x.square")
+                            .foregroundColor(.red)
+                        //        CONDITION1         AND     CONDITION2         true  false
+                        //       answerChecked = true     answerCorrect = false
+                            .opacity(answerChecked == true && answerCorrect == false ? 1.0 : 0.0)
+                    }
+                }
+                    
+                    
+                    //                Button(action:{
+                    //                    // resetting all the orginal properties
+                    //                    currentItem = itemsToSpell.randomElement()!
+                    //                    answerChecked = false
+                    //                    answerCorrect = false
+                    //                    inputGiven = ""
+                    //
+                    //                }, label: {
+                    //                    Text("New Question")
+                    //                })
+                }
+                // Next button for the checking of the question
             }
-            // Next button for the checking of the question
-           }
             
         }
     }
 
-
-
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    
+    
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
-}
