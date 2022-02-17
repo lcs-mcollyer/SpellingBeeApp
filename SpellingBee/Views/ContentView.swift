@@ -13,8 +13,19 @@ struct ContentView: View {
     // MARK: Stored properties
     @State var currentItem = itemsToSpell.randomElement()!
     
+    
+    @State var inputGiven = ""
+    @State var answerChecked = false
+    @State var answerCorrect = false
+    //
+    //    var correctSpelling: ""{
+    //        return inputGiven == answerCorrect
+    //    }
+    
     // MARK: Computed properties
     var body: some View {
+        
+        
         
         VStack {
             
@@ -29,7 +40,7 @@ struct ContentView: View {
                     // characteristics of how the voice will sound
                     //.word allows us to find the word we need to create from the String
                     let utterance = AVSpeechUtterance(string: currentItem.word)
-                   
+                    
                     // See a list of available language codes and their corresponding
                     // voice names and genders here:
                     // https://www.ikiapps.com/tips/2015/12/30/setting-voice-for-tts-in-ios
@@ -44,12 +55,47 @@ struct ContentView: View {
                     let synthesizer = AVSpeechSynthesizer()
                     synthesizer.speak(utterance)
                     
+                    
+                    
+                    
                 }
             
         }
         
+        VStack{
+            // Creating the inputGiven
+            // Using $ to tie it to the origanal inputGiven Value
+            TextField("Type Answer Here", text: $inputGiven)
+                .padding()
+            
+            ZStack{
+                Button(action:{
+                    // resetting all the orginal properties
+                    currentItem = itemsToSpell.randomElement()!
+                    answerChecked = false
+                    answerCorrect = false
+                    inputGiven = ""
+                    
+                }, label: {
+                    Text("New Question")
+                })
+            }
+            // Next button for the checking of the question
+            Button(action: {
+                
+                
+            }, label: {
+            
+            
+            }
+           )}
+            
+        }
     }
-}
+
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
