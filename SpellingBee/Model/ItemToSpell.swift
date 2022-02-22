@@ -18,109 +18,109 @@ struct ItemToSpell: Identifiable {
 // Create the list of items that can be spelled
 let itemsToSpell = [
     
-    ItemToSpell(word: "watermelon",
+    ItemToSpell(word: "Watermelon",
                 imageName: "watermelon"),
     
-    ItemToSpell(word: "waffles",
+    ItemToSpell(word: "Waffles",
                 imageName: "waffles"),
     
-    ItemToSpell(word: "turkey",
+    ItemToSpell(word: "Turkey",
                 imageName: "turkey"),
     
-    ItemToSpell(word: "tomato",
+    ItemToSpell(word: "Tomato",
                 imageName: "tomato"),
     
-    ItemToSpell(word: "strawberry",
+    ItemToSpell(word: "Strawberry",
                 imageName: "strawberry"),
     
-    ItemToSpell(word: "steak",
+    ItemToSpell(word: "Steak",
                 imageName: "steak"),
     
-    ItemToSpell(word: "soup",
+    ItemToSpell(word: "Soup",
                 imageName: "soup"),
     
-    ItemToSpell(word: "soda",
+    ItemToSpell(word: "Soda",
                 imageName: "soda"),
     
-    ItemToSpell(word: "sandwich",
+    ItemToSpell(word: "Sandwich",
                 imageName: "sandwich"),
     
-    ItemToSpell(word: "pumpkin",
+    ItemToSpell(word: "Pumpkin",
                 imageName: "pumpkin"),
     
-    ItemToSpell(word: "potato",
+    ItemToSpell(word: "Potato",
                 imageName: "potato"),
     
-    ItemToSpell(word: "pizza",
+    ItemToSpell(word: "Pizza",
                 imageName: "pizza"),
     
-    ItemToSpell(word: "pineapple",
+    ItemToSpell(word: "Pineapple",
                 imageName: "pineapple"),
     
-    ItemToSpell(word: "pear",
+    ItemToSpell(word: "Pear",
                 imageName: "pear"),
     
-    ItemToSpell(word: "peas",
+    ItemToSpell(word: "Peas",
                 imageName: "peas"),
     
-    ItemToSpell(word: "pancakes",
+    ItemToSpell(word: "Pancakes",
                 imageName: "pancakes"),
     
-    ItemToSpell(word: "orange",
+    ItemToSpell(word: "Orange",
                 imageName: "orange"),
     
-    ItemToSpell(word: "onion rings",
+    ItemToSpell(word: "Onion rings",
                 imageName: "onion-rings"),
     
-    ItemToSpell(word: "onion",
+    ItemToSpell(word: "Onion",
                 imageName: "onion"),
     
-    ItemToSpell(word: "mushroom",
+    ItemToSpell(word: "Mushroom",
                 imageName: "mushroom"),
     
-    ItemToSpell(word: "milkshake",
+    ItemToSpell(word: "Milkshake",
                 imageName: "milkshake"),
     
-    ItemToSpell(word: "lemon",
+    ItemToSpell(word: "Lemon",
                 imageName: "lemon"),
     
-    ItemToSpell(word: "green pepper",
+    ItemToSpell(word: "Green pepper",
                 imageName: "green-pepper"),
     
-    ItemToSpell(word: "grapes",
+    ItemToSpell(word: "Grapes",
                 imageName: "grapes"),
     
-    ItemToSpell(word: "eggplant",
+    ItemToSpell(word: "Eggplant",
                 imageName: "eggplant"),
     
-    ItemToSpell(word: "french fries",
+    ItemToSpell(word: "French fries",
                 imageName: "french-fries"),
     
-    ItemToSpell(word: "eggs",
+    ItemToSpell(word: "Eggs",
                 imageName: "eggs"),
     
-    ItemToSpell(word: "cucumber",
+    ItemToSpell(word: "Cucumber",
                 imageName: "cucumber"),
     
-    ItemToSpell(word: "corn",
+    ItemToSpell(word: "Corn",
                 imageName: "corn"),
     
-    ItemToSpell(word: "cherry",
+    ItemToSpell(word: "Cherry",
                 imageName: "cherry"),
     
-    ItemToSpell(word: "celery",
+    ItemToSpell(word: "Celery",
                 imageName: "celery"),
     
-    ItemToSpell(word: "carrot",
+    ItemToSpell(word: "Carrot",
                 imageName: "carrot"),
     
-    ItemToSpell(word: "hamburger",
+    ItemToSpell(word: "Hamburger",
                 imageName: "hamburger"),
     
-    ItemToSpell(word: "banana",
+    ItemToSpell(word: "Banana",
                 imageName: "banana"),
     
-    ItemToSpell(word: "apple",
+    ItemToSpell(word: "Apple",
                 imageName: "apple"),
     
 ]

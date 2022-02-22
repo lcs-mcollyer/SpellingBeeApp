@@ -26,6 +26,8 @@ struct ContentView: View {
         
         // creation of the displaying code for the randomly selected image and image name (tied together)
         VStack {
+            Text("Click to Hear Pronunciation!")
+            
             
             Image(currentItem.imageName)
                 .resizable()
@@ -67,7 +69,23 @@ struct ContentView: View {
             TextField("Type Answer Here", text: $inputGiven)
                 .padding()
             
-            ZStack(alignment: .leading){
+       
+            HStack {
+                
+                Image(systemName: "checkmark.circle")
+                    .foregroundColor(.green)
+                //        CONDITION      true  false
+                    .opacity(answerCorrect == true ? 1.0 : 0.0)
+                
+                Image(systemName: "x.square")
+                    .foregroundColor(.red)
+                //        CONDITION1         AND     CONDITION2         true  false
+                //       answerChecked = true     answerCorrect = false
+                    .opacity(answerChecked == true && answerCorrect == false ? 1.0 : 0.0)
+                
+            }
+            
+            ZStack(alignment: .trailing){
                 Button(action: {
                     // Answer has been checked
                     answerChecked = true
@@ -86,41 +104,28 @@ struct ContentView: View {
                 })
                     .padding()
                     .buttonStyle(.bordered)
+                    .opacity(answerChecked == false ? 1.0 : 0.0)
                 
-            }
-            ZStack{
-                HStack {
+                
+                
+                Button(action:{
+                    // resetting all the orginal properties
+                    currentItem = itemsToSpell.randomElement()!
+                    answerChecked = false
+                    answerCorrect = false
+                    inputGiven = ""
                     
-                    Image(systemName: "checkmark.circle")
-                        .foregroundColor(.green)
-                    //        CONDITION      true  false
-                        .opacity(answerCorrect == true ? 1.0 : 0.0)
-                    
-                    Image(systemName: "x.square")
-                        .foregroundColor(.red)
-                    //        CONDITION1         AND     CONDITION2         true  false
-                    //       answerChecked = true     answerCorrect = false
-                        .opacity(answerChecked == true && answerCorrect == false ? 1.0 : 0.0)
-                    
-                }
+                }, label: {
+                    Text("New Question")
+                })
+                    .padding()
+                    .buttonStyle(.bordered)
+                    .opacity(answerChecked == true ? 1.0 : 0.0)
             }
             
-                            Button(action:{
-                                // resetting all the orginal properties
-                                currentItem = itemsToSpell.randomElement()!
-                                answerChecked = false
-                                answerCorrect = false
-                                inputGiven = ""
-            
-                            }, label: {
-                                Text("New Question")
-                            })
-                .padding()
-                .buttonStyle(.bordered)
+          
         }
-         // Next button for the checking of the question
     }
-    
 }
 
 
